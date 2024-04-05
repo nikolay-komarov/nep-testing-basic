@@ -1,0 +1,22 @@
+# Node
+node_modules
+npm-debug.log
+
+# Compiled output
+
+# IDEs and editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Additional files
+*.log*
