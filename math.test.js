@@ -2,19 +2,17 @@ import { divide, multiply, sum } from './math';
 
 describe('math', () => {
   describe('divide', () => {
-    it('should devide positive number', () => {
-      const actualResult = divide(6, 2);
-      const expectedResult = 3;
-      
-      expect(expectedResult).toBe(actualResult);
-    });
+    it.each([
+      { inputA: 6, inputB: 2, expected: 3 },
+      { inputA: 100, inputB: 10, expected: 10 },
+      { inputA: 10, inputB: 0, expected: Infinity },
+    ])('should $inputA devide $inputB to equals $expected', 
+      ({ inputA, inputB, expected }) => {
+        const actualResult = divide(inputA, inputB);
 
-    it('should return Infinity dividing by 0', () => {
-      const actualResult = divide(6, 0);
-      const expectedResult = Infinity;
-      
-      expect(expectedResult).toBe(actualResult);
-    });
+        expect(actualResult).toBe(expected);  
+      }
+    );
   });
 
   describe('multiply', () => {
@@ -22,21 +20,21 @@ describe('math', () => {
       const actualResult = multiply(3, 2);
       const expectedResult = 6;
       
-      expect(expectedResult).toBe(actualResult);
+      expect(actualResult).toBe(expectedResult);
     });
   
     it('should multiply negative numbers', () => {
       const actualResult = multiply(-3, -2);
       const expectedResult = 6;
       
-      expect(expectedResult).toBe(actualResult);
+      expect(actualResult).toBe(expectedResult);
     });
   
     it('should multiply positive and negative numbers', () => {
       const actualResult = multiply(3, -2);
       const expectedResult = -6;
       
-      expect(expectedResult).toBe(actualResult);
+      expect(actualResult).toBe(expectedResult);
     });
   });
 
@@ -45,7 +43,7 @@ describe('math', () => {
       const actualResult = sum(6, 2);
       const expectedResult = 8;
       
-      expect(expectedResult).toBe(actualResult);
+      expect(actualResult).toBe(expectedResult);
     });
   });
 });
